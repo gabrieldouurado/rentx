@@ -4,10 +4,10 @@ import swaggerUi from "swagger-ui-express";
 
 import { AppError } from "@errors/AppError";
 
-import { createConnection } from "./database";
+import swaggerFile from "../../../swagger.json";
+import { createConnection } from "../typeorm";
 import "@shared/container";
 import { router } from "./routes";
-import swaggerFile from "./swagger.json";
 
 createConnection();
 

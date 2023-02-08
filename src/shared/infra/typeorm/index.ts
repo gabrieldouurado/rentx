@@ -13,7 +13,7 @@ const AppDataSource = new DataSource({
   password: "ignite",
   database: "rentalx",
   entities: [Category, Specification, User],
-  migrations: ["./src/database/migrations/*.ts"],
+  migrations: ["./src/shared/infra/typeorm/migrations/*.ts"],
 });
 
 export function createConnection(host = "database"): Promise<DataSource> {

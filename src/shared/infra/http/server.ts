@@ -1,13 +1,15 @@
-import express, { Request, Response, NextFunction } from "express";
 import "express-async-errors";
+import express, { Request, Response, NextFunction } from "express";
 import swaggerUi from "swagger-ui-express";
 
 import { AppError } from "@errors/AppError";
 
 import swaggerFile from "../../../swagger.json";
 import { createConnection } from "../typeorm";
-import "@shared/container";
 import { router } from "./routes";
+
+import "@shared/container";
+import "@shared/container/providers";
 
 createConnection();
 

@@ -24,7 +24,6 @@
 **RN**
 - Não deve ser possível cadastrar uma especificação para um carro não cadastrado
 - Não deve ser possível cadastrar uma mesma especificação já existente para o carro
-- Deve ser possível listar todas as espeficicações
 - Somente usuários administradores devem fazer cadastro uma espefificação do para o carro
 
 # Cadastro de imagens do carro

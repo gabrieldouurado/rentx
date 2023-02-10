@@ -4,7 +4,7 @@ import { randomUUID } from "node:crypto";
 import { createConnection } from "@shared/infra/typeorm";
 
 async function create() {
-  const connection = await createConnection("localhost");
+  const connection = await createConnection();
 
   const id = randomUUID();
   const password = await hash("admin", 8);

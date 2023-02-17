@@ -40,9 +40,23 @@
 # Aluguel de carro
 **RF**
 - Deve ser possível cadastrar um aluguel
+- Ao realizar o aluguel do carro, o status deve ser mudado para indisponível
 
 **RN**
 - O aluguel deve ter duração minima de 24 horas
 - Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo usuário
 - Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo carro
 - o usuário deve estar logado na aplicação
+
+# Devolução do carro
+**RF**
+Deve ser possível realizar a devolução do carro
+
+**RGN**
+- Se o carro for devolvido em menos de 24 horas, deverá ser cobrada a diária completa
+- ao realizar a devolução do carro, ele deve ser liberado para outro aluguel
+- ao realizar a devolução o usuário deve ser liberado para outro aluguel
+- ao realizar a devolução, deverá calculado o total do aluguel
+- caso o horário do alugel seja superior ao horário previsto de entrega, deverá ser cobarada uma multa proporcial aos dias de atraso
+- caso haja multa, deverá ser somada ao valor total do aluguel
+- O usuário deve estar logado na aplicação

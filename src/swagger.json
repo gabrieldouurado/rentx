@@ -183,7 +183,9 @@
     },
     "/cars": {
       "post": {
-        "tags": ["Cars"],
+        "tags": [
+          "Cars"
+        ],
         "summary": "Create a new car",
         "description": "Create a new car",
         "security": [
@@ -206,6 +208,54 @@
           },
           "400": {
             "description": "Car already exists"
+          }
+        }
+      }
+    },
+    "/cars/image/{id}": {
+      "post": {
+        "tags": [
+          "Cars"
+        ],
+        "summary": "Upload car images",
+        "description": "Upload car images",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Car id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "images": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
           }
         }
       }

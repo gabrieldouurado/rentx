@@ -28,8 +28,6 @@ class CreateRentalUseCase {
     car_id,
     expected_return_date,
   }: IRequest): Promise<Rental> {
-    const minHoursToRentACar = 24;
-
     const carNotAvailable = await this.rentalsRepository.findOpenRentalByCar(
       car_id
     );
@@ -53,9 +51,7 @@ class CreateRentalUseCase {
     );
 
     if (expectedDateIsBeforeMinDate) {
-      throw new AppError(
-        `Expected return date requires a minimum of ${minHoursToRentACar} hours`
-      );
+      throw new AppError("Expected return date requires a minimum of 24 hours");
     }
 
     const rental = await this.rentalsRepository.create({

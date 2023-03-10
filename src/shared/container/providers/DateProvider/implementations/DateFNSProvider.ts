@@ -15,6 +15,10 @@ class DateFNSProvider implements IDateProvider {
     return add(date, { hours });
   }
 
+  addDaysInDate(date: Date, days: number): Date {
+    return add(date, { days });
+  }
+
   countDays(start: Date, end: Date): number {
     const interval = intervalToDuration({ start, end });
 

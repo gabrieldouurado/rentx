@@ -1,5 +1,6 @@
 import { hash } from "bcryptjs";
 import { randomUUID } from "node:crypto";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import request from "supertest";
 import { DataSource } from "typeorm";
 
@@ -31,7 +32,7 @@ describe("Create Category Controller", () => {
       password: "admin",
     });
 
-    adminToken = `Bearer ${adminSession.body.token}`;
+    adminToken = `Bearer ${adminSession.body.refresh_token}`;
   });
 
   afterEach(async () => {

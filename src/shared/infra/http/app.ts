@@ -1,5 +1,5 @@
 import "express-async-errors";
-import { config } from "dotenv";
+import "dotenv/config";
 import express, { Request, Response, NextFunction } from "express";
 import swaggerUi from "swagger-ui-express";
 
@@ -12,7 +12,6 @@ import { router } from "./routes";
 import "@shared/container";
 import "@shared/container/providers";
 
-config();
 createConnection();
 
 const app = express();
